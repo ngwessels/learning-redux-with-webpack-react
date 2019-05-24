@@ -5,15 +5,35 @@ import Moment from 'moment';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
+
 class App extends React.Component {
 
   constructor(props) {
     super(props);
+
+  }
+
+
+
+  carQuery() {
+    var data = null;
+
+    var xhr = new XMLHttpRequest();
+    xhr.withCredentials = true;
+
+    xhr.addEventListener("readystatechange", function () {
+      if (this.readyState === 4) {
+        console.log(this.responseText);
+      }
+    });
+
+    xhr.open("GET", "https://www.carqueryapi.com/api/0.3/?callback=?&cmd=getYears");
+    xhr.send(data);
   }
 
 
   render(){
-    console.log(this.props);
+    this.carQuery();
     return (
       <div>
         <Switch>
