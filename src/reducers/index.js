@@ -1,10 +1,8 @@
-import selectedTicketReducer from './selected-ticket-reducer';
-import ticketListReducer from './ticket-list-reducer';
+import masterState from './masterState';
 import { combineReducers } from 'redux';
 
 const rootReducer = combineReducers({
-  selectedTicket: selectedTicketReducer,
-  masterTicketList: ticketListReducer
+  masterState: masterState
 });
 
 export default rootReducer;

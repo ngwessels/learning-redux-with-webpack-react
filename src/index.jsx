@@ -6,7 +6,6 @@ import AOS from 'aos';
 import 'aos/src/sass/aos.scss';
 import { HashRouter } from 'react-router-dom';
 import { createStore } from 'redux';
-import ticketListReducer from './reducers/ticket-list-reducer';
 import { Provider } from 'react-redux';
 import rootReducer from './reducers/index';
 
@@ -23,7 +22,7 @@ const render = (Component) => {
   ReactDOM.render(
     <HashRouter>
       <Provider store={store}>
-        <Component/>
+        <App path='/' />
       </Provider>
     </HashRouter>,
     document.getElementById('react-app-root')
