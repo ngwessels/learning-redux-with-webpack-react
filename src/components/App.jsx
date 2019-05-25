@@ -12,24 +12,7 @@ class App extends React.Component {
     super(props);
 
   }
-  carQuery() {
-    fetch('https://www.carqueryapi.com/api/0.3/?callback=?&cmd=getYears')
-      .then(results => {
-        return results.text();
-      }).then(data => {
-        console.log(data);
-        let newData = data.replace('?', '')
-        newData = newData.replace('(', '');
-        newData = newData.replace(')', '');
-        newData = newData.replace(';', '');
-        return JSON.parse(newData);
-        // console.log(newData.json());
-      }).then(data => {
-        console.log(data.Years)
-      })
-
-
-  }
+  
 
 
   render(){
